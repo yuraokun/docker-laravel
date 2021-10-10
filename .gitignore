@@ -1,0 +1,4 @@
+src/vendor
+mysql/database/*
+!mysql/database/.gitkeep
+!/.gitignore
