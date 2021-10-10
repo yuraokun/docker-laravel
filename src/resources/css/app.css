@@ -1,3 +1,54 @@
-@import 'tailwindcss/base';
+/* @import 'tailwindcss/base';
 @import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import 'tailwindcss/utilities'; */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  color: orange;
+  padding: 30px 0px;
+  background: whitesmoke;
+  border-bottom: 1px solid orange;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+}
+.container {
+  padding: 100px 20px;
+  width: 100%;
+}
+
+.tag {
+  padding: 5px;
+}
+
+.tag.orange {
+  border: 1px solid black;
+  color: black;
+}
+.tag.teal {
+  border: 1px solid rgb(240, 44, 76);
+  color: rgb(240, 44, 76);
+}
+
+.card {
+  padding: 10px;
+  background: teal;
+  color: white;
+  margin: 10px 0px;
+  border-radius: 10px;
+}
+
+.card.highlighted {
+  background: rgb(235, 178, 74);
+}
+
+
