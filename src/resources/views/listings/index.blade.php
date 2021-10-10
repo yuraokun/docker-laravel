@@ -17,7 +17,7 @@
     @endforeach
     <div>
       @foreach($listings as $listing)
-      <a href="#" class="listing">
+      <a href="{{ route('listings.show', $listing->slug) }}" class="listing">
 
         <div class="card {{$listing->is_highlighted ? 'highlighted' : '';}}">
           <img src="/storage/{{$listing->logo}}" alt="">

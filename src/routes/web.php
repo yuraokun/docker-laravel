@@ -20,9 +20,12 @@ use App\Http\Controllers;
 
 Route::get('/', [Controllers\ListingController::class, 'index'])->name('listings.index');
 
-Route::get('/test', function () {
-    return "docker works";
-});
+
+
+
+
+
+
 
 
 Route::get('/dashboard', function () {
@@ -30,3 +33,13 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+// Route::get('/test', function () {
+//     return "docker works";
+// });
+
+// Route::get('/yes', [Controllers\ListingController::class, 'yes'])->name('listings.yes');
+
+Route::get('/{listing:slug}', [Controllers\ListingController::class, 'show'])->name('listings.show');
+
+Route::get('/{listing:slug}/apply', [Controllers\ListingController::class, 'apply'])->name('listings.apply');
