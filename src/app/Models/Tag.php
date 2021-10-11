@@ -12,6 +12,6 @@ class Tag extends Model
     protected $guarded = [];
 
     public function listings() {
-        return $this->belognsToMany(Listing::class);
+        return $this->belongsToMany(Listing::class);
     }
 }

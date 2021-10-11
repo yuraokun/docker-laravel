@@ -22,7 +22,13 @@ Route::get('/', [Controllers\ListingController::class, 'index'])->name('listings
 
 
 
+Route::get('/new', [Controllers\ListingController::class, 'create'])->name('listings.create');
 
+Route::post('/new',[Controllers\ListingController::class,
+'store'])->name('listings.store');
+
+Route::get('/getLogout',[Controllers\ListingController::class,
+'getLogout'])->name('listings.logout');
 
 
 
