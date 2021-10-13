@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,8 +35,8 @@ Route::get('/getLogout',[Controllers\ListingController::class,
 
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
+Route::get('/dashboard', function (Request $request) {
+    return view('dashboard', ['listings' => $request->user()->listings]);
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

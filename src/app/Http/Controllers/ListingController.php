@@ -12,6 +12,7 @@ class ListingController extends Controller
 {
     public function index(Request $request) {
         $listings =   Listing::where('is_active', true)
+        ->where('del_flg', 0)
         ->with('tags')
         ->latest()
         ->get();
@@ -99,9 +100,10 @@ class ListingController extends Controller
                 'email' => $request->email,
                 'password' => \Illuminate\Support\Facades\Hash::make($request->password)
             ]);
+            $user->createAsStripeCustomer();
         }
 
-        $user->createAsStripeCustomer();
+        
 
         Auth::login($user);
 
@@ -147,6 +149,7 @@ class ListingController extends Controller
         
 
     }
+
 
     public function getLogout(){
         Auth::logout();

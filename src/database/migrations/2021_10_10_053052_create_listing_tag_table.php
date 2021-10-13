@@ -14,8 +14,8 @@ class CreateListingTagTable extends Migration
     public function up()
     {
         Schema::create('listing_tag', function (Blueprint $table) {
-           $table->unsignedBigInteger('listing_id');
-           $table->unsignedBigInteger('tag_id');
+            $table->id('listing_id');
+            $table->id('tag_id');
         });
     }
 
