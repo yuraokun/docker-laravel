@@ -9,7 +9,7 @@ services:
     image: nginx:stable-alpine
     container_name: webserver
     ports:
-      - "8080:80"
+      - "8081:80"
     volumes:
       # - "./src:/usr/share/nginx/html
       - ./src:/var/www/html
@@ -27,7 +27,7 @@ services:
     volumes:
       - ./src:/var/www/html
     ports:
-      - "9000:9000"
+      - "9001:9000"
     networks:
       - laravel
   db:
@@ -35,7 +35,7 @@ services:
     restart: unless-stopped
     tty: true
     ports:
-      - "4000:3306"
+      - "4001:3306"
     environment:
       MYSQL_DATABASE: laravel_test
       MYSQL_USER: laravel_test_user
